@@ -1,0 +1,37 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #000000;
+}
+
+@font-face {
+    font-family: ExoBlack;
+    src: url(../../../assets/fonts/Exo-Black.ttf);
+}
+
+@font-face {
+    font-family: ExoThin;
+    src: url(../../../assets/fonts/Exo-Thin.ttf);
+}
+
+@font-face {
+    font-family: ExoRegular;
+    src: url(../../../assets/fonts/Exo-Regular.ttf);
+}
+
+@media only screen and (max-width: 600px) {
+    html, body {
+        width: 600px;
+    }
+}
+
+
+@media only screen and (max-width: 400px) {
+    html, body {
+        width: 100%;
+    }
+}

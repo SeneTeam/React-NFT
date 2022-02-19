@@ -1,0 +1,25 @@
+a {
+  color: #6973d4 !important;
+  font-size: 30px !important;
+}
+
+ul li a {
+  margin-left: 40px !important;
+  text-shadow: 2px 2px #131212;
+}
+
+.navbar {
+  /* background-color: #f8f9fa; */
+  background-color: #240842;
+}
+
+@media (max-width: 1000px) {
+  ul li a {
+    margin-left: 0px !important;
+  }
+
+  /* .navbar {
+    background-color: #f8f9fa;
+    background-color: #240842;
+  } */
+}

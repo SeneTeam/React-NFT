@@ -1,0 +1,50 @@
+.masthead {
+  height: 100vh;
+  min-height: 500px;
+  /* background-image: url("../../assets/image/banner.png"); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.discord-icon {
+  width: 40px;
+}
+
+.twitter-icon {
+  width: 40px;
+}
+
+i {
+  font-size: 30px;
+}
+
+
+.desc {
+  text-align: justify;
+}
+.img {
+  border-radius: 10px;
+}
+
+.t-shadow {
+  text-shadow: 3px 3px #131212;
+}
+
+@media (min-width: 1000px) {
+  .welcome {
+    font-size: 3rem;
+  }
+  .tittle {
+    font-size: 4rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .masthead {
+    margin-top: 40px;
+  }
+  .welcome {
+    font-size: 2rem;
+  }
+}

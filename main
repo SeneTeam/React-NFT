@@ -1,0 +1,80 @@
+ <main>
+      {/* {wallet && (
+        <p>Wallet {shortenAddress(wallet.publicKey.toBase58() || "")}</p>
+      )} */}
+
+      {/* {wallet && <p>Balance: {(balance || 0).toLocaleString()} SOL</p>} */}
+
+      {wallet && (
+        <h3 style={{ textShadow: "1px 1px #0c0c0c" }}>
+          {itemsRedeemed} / {itemsAvailable} Minted
+        </h3>
+      )}
+      {/* 
+      {wallet && <p>Redeemed: {itemsRedeemed}</p>}
+
+      {wallet && <p>Remaining: {itemsRemaining}</p>} */}
+
+      {
+        <MintContainer>
+          {!wallet ? (
+            <ConnectButton
+              style={{
+                backgroundColor: "#43beeb",
+                fontSize: "20px",
+                fontFamily: "Comic Neue, cursive",
+                minWidth: "150px",
+                justifyContent: "center",
+              }}
+            >
+              Connect Wallet
+            </ConnectButton>
+          ) : isActive &&
+            candyMachine?.state.gatekeeper &&
+            wallet.publicKey &&
+            wallet.signTransaction ? (
+            <GatewayProvider
+              wallet={{
+                publicKey:
+                  wallet.publicKey || new PublicKey(CANDY_MACHINE_PROGRAM),
+                //@ts-ignore
+                signTransaction: wallet.signTransaction,
+              }}
+              // // Replace with following when added
+              // gatekeeperNetwork={candyMachine.state.gatekeeper_network}
+              gatekeeperNetwork={
+                candyMachine?.state?.gatekeeper?.gatekeeperNetwork
+              } // This is the ignite (captcha) network
+              /// Don't need this for mainnet
+              clusterUrl={rpcUrl}
+              options={{ autoShowModal: false }}
+            >
+              <MintButton
+                candyMachine={candyMachine}
+                isMinting={isMinting}
+                onMint={onMint}
+              />
+            </GatewayProvider>
+          ) : (
+            <MintButton
+              candyMachine={candyMachine}
+              isMinting={isMinting}
+              onMint={onMint}
+            />
+          )}
+        </MintContainer>
+      }
+
+      <Snackbar
+        open={alertState.open}
+        autoHideDuration={6000}
+        onClose={() => setAlertState({ ...alertState, open: false })}
+      >
+        <Alert
+          onClose={() => setAlertState({ ...alertState, open: false })}
+          severity={alertState.severity}
+        >
+          {alertState.message}
+        </Alert>
+      </Snackbar>
+    </main>

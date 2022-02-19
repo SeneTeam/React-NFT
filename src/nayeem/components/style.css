@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@300&display=swap');
+
+.masthead {
+    height: 100vh;
+    min-height: 500px;
+    /* background-image: url("../../assets/image/banner.png"); */
+    /* background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; */
+}
+
+.wrap {
+    font-family: 'Exo', sans-serif;
+    color: white;
+}
+
+.desc {
+    text-align: justify;
+}
+
+.img {
+    border-radius: 10px;
+}
+
+.t-shadow {
+    /* text-shadow: 6px 6px #131212; */
+}
+
+@media (min-width: 1000px) {
+    .welcome {
+        font-size: 3rem;
+    }
+
+    .tittle {
+        font-size: 5rem;
+    }
+}
+
+@media (max-width: 1000px) {
+    .masthead {
+        margin-top: 40px;
+    }
+
+    .welcome {
+        font-size: 2rem;
+    }
+}
